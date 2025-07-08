@@ -13,6 +13,7 @@ app.use(express.json()); // Middleware to parse incoming JSON payloads in reques
 const client = new MongoClient(process.env.MONGODB_URI); // Creates a new MongoClient instance using the MongoDB connection URI from environment variables.
 const db = client.db("TrackGoalsDB"); // Specifies the database to connect to.
 const users = db.collection("users"); // Specifies the 'users' collection within the database.
+const habits = db.collection("habits"); // Specifies the 'habits' collection within the database.
 
 /**
  * Asynchronously connects to the MongoDB database.
@@ -128,6 +129,114 @@ app.get("/api/protected", (req, res) => {
     res.status(401).json({ message: "Invalid token." });
   }
 });
+
+app.post("/api/habits", async (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader) return res.status(401).json({ message: "No token provided." });
+
+  const token = authHeader.split(" ")[1];
+  let decoded;
+  try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid token." });
+  }
+
+  const { name, description, frequency } = req.body;
+  if (!name || !frequency) return res.status(400).json({ message: "Missing fields." });
+
+  try {
+    const newHabit = {
+      userId: decoded.userId,
+      name,
+      description,
+      frequency,
+      createdAt: new Date(),
+      completedDates: []
+    };
+    const result = await habits.insertOne(newHabit);
+    res.status(201).json(result.ops?.[0] || newHabit);
+  } catch (err) {
+    res.status(500).json({ message: "Server error." });
+  }
+});
+
+app.get("/api/habits", async (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader) return res.status(401).json({ message: "No token provided." });
+
+  const token = authHeader.split(" ")[1];
+  let decoded;
+  try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid token." });
+  }
+
+  try {
+    const userHabits = await habits.find({ userId: decoded.userId }).toArray();
+    res.status(200).json(userHabits);
+  } catch (err) {
+    res.status(500).json({ message: "Server error." });
+  }
+});
+
+const { ObjectId } = require("mongodb");
+
+app.patch("/api/habits/:id/complete", async (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader) return res.status(401).json({ message: "No token provided." });
+
+  const token = authHeader.split(" ")[1];
+  let decoded;
+  try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid token." });
+  }
+
+  const habitId = req.params.id;
+
+  try {
+    const result = await habits.updateOne(
+      { _id: new ObjectId(habitId), userId: decoded.userId },
+      { $addToSet: { completedDates: new Date() } }
+    );
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ message: "Habit not found or not yours." });
+    }
+
+    res.status(200).json({ message: "Habit marked as completed." });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server error." });
+  }
+});
+
+
+app.delete("/api/habits/:id", async (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader) return res.status(401).json({ message: "No token provided." });
+
+  const token = authHeader.split(" ")[1];
+  let decoded;
+  try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid token." });
+  }
+
+  const habitId = req.params.id;
+
+  try {
+    await habits.deleteOne({ _id: new ObjectId(habitId), userId: decoded.userId });
+    res.status(200).json({ message: "Habit deleted." });
+  } catch (err) {
+    res.status(500).json({ message: "Server error." });
+  }
+});
+
 
 // Defines the port for the server to listen on.
 const PORT = process.env.PORT || 5000;
