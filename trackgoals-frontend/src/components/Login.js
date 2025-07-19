@@ -114,7 +114,7 @@ function Login() {
             </p>
           )}
           <p className="text-center small text-muted mb-0">
-            You do not have an account? <a href="/">Register</a>
+            You do not have an account? <a href="/signup">Register</a>
           </p>
           <div className="mt-3 p-2 bg-light border rounded text-center small text-muted">
             <p className="mb-1 fw-bold">Test Credentials:</p>

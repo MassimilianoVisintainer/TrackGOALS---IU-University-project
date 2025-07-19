@@ -82,7 +82,7 @@ function SignUp() {
             </p>
           )}
           <p className="text-center small text-muted mb-0">
-            Already have an account? <a href="/login">Log in</a>
+            Already have an account? <a href="/">Log in</a>
           </p>
         </form>
       </div>

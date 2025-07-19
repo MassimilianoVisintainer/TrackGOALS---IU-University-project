@@ -14,6 +14,7 @@ const client = new MongoClient(process.env.MONGODB_URI); // Creates a new MongoC
 const db = client.db("TrackGoalsDB"); // Specifies the database to connect to.
 const users = db.collection("users"); // Specifies the 'users' collection within the database.
 const habits = db.collection("habits"); // Specifies the 'habits' collection within the database.
+const goals = db.collection("goals"); // Add this with the other collections
 
 /**
  * Asynchronously connects to the MongoDB database.
@@ -21,15 +22,14 @@ const habits = db.collection("habits"); // Specifies the 'habits' collection wit
  */
 async function connectDB() {
   try {
-    await client.connect(); 
+    await client.connect();
     console.log("Connected to MongoDB");
   } catch (err) {
-    console.error(err); 
+    console.error(err);
   }
 }
 
 connectDB(); // Calls the function to connect to the database when the server starts.
-
 
 /**
  * POST /api/signup
@@ -58,11 +58,10 @@ app.post("/api/signup", async (req, res) => {
 
     res.status(201).json({ message: "User created successfully." }); // Returns a 201 Created status on successful registration.
   } catch (err) {
-    console.error(err); 
-    res.status(500).json({ message: "Server error." }); 
+    console.error(err);
+    res.status(500).json({ message: "Server error." });
   }
 });
-
 
 /**
  * POST /api/login
@@ -101,7 +100,7 @@ app.post("/api/login", async (req, res) => {
     // Returns a 200 OK status, a success message, and the generated JWT.
     res.status(200).json({ message: "Login successful.", token });
   } catch (err) {
-    console.error(err); 
+    console.error(err);
     res.status(500).json({ message: "Server error." });
   }
 });
@@ -132,7 +131,8 @@ app.get("/api/protected", (req, res) => {
 
 app.post("/api/habits", async (req, res) => {
   const authHeader = req.headers.authorization;
-  if (!authHeader) return res.status(401).json({ message: "No token provided." });
+  if (!authHeader)
+    return res.status(401).json({ message: "No token provided." });
 
   const token = authHeader.split(" ")[1];
   let decoded;
@@ -143,7 +143,8 @@ app.post("/api/habits", async (req, res) => {
   }
 
   const { name, description, frequency } = req.body;
-  if (!name || !frequency) return res.status(400).json({ message: "Missing fields." });
+  if (!name || !frequency)
+    return res.status(400).json({ message: "Missing fields." });
 
   try {
     const newHabit = {
@@ -152,7 +153,7 @@ app.post("/api/habits", async (req, res) => {
       description,
       frequency,
       createdAt: new Date(),
-      completedDates: []
+      completedDates: [],
     };
     const result = await habits.insertOne(newHabit);
     res.status(201).json(result.ops?.[0] || newHabit);
@@ -163,7 +164,8 @@ app.post("/api/habits", async (req, res) => {
 
 app.get("/api/habits", async (req, res) => {
   const authHeader = req.headers.authorization;
-  if (!authHeader) return res.status(401).json({ message: "No token provided." });
+  if (!authHeader)
+    return res.status(401).json({ message: "No token provided." });
 
   const token = authHeader.split(" ")[1];
   let decoded;
@@ -185,7 +187,8 @@ const { ObjectId } = require("mongodb");
 
 app.patch("/api/habits/:id/complete", async (req, res) => {
   const authHeader = req.headers.authorization;
-  if (!authHeader) return res.status(401).json({ message: "No token provided." });
+  if (!authHeader)
+    return res.status(401).json({ message: "No token provided." });
 
   const token = authHeader.split(" ")[1];
   let decoded;
@@ -214,10 +217,10 @@ app.patch("/api/habits/:id/complete", async (req, res) => {
   }
 });
 
-
 app.delete("/api/habits/:id", async (req, res) => {
   const authHeader = req.headers.authorization;
-  if (!authHeader) return res.status(401).json({ message: "No token provided." });
+  if (!authHeader)
+    return res.status(401).json({ message: "No token provided." });
 
   const token = authHeader.split(" ")[1];
   let decoded;
@@ -230,19 +233,195 @@ app.delete("/api/habits/:id", async (req, res) => {
   const habitId = req.params.id;
 
   try {
-    await habits.deleteOne({ _id: new ObjectId(habitId), userId: decoded.userId });
+    await habits.deleteOne({
+      _id: new ObjectId(habitId),
+      userId: decoded.userId,
+    });
     res.status(200).json({ message: "Habit deleted." });
   } catch (err) {
     res.status(500).json({ message: "Server error." });
   }
 });
 
+app.post("/api/goals", async (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader)
+    return res.status(401).json({ message: "No token provided." });
+
+  const token = authHeader.split(" ")[1];
+  let decoded;
+  try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid token." });
+  }
+
+  const { title, startDate, endDate } = req.body;
+
+  if (!title || !startDate || !endDate) {
+    return res
+      .status(400)
+      .json({ message: "Title, start date, and end date are required." });
+  }
+
+  try {
+    const newGoal = {
+      userId: decoded.userId,
+      title: title.trim(),
+      description: req.body.description?.trim() || "",
+      startDate: new Date(startDate),
+      endDate: new Date(endDate),
+      completed: false,
+      progress: 0,
+      createdAt: new Date(),
+    };
+
+    const result = await goals.insertOne(newGoal);
+    res.status(201).json(result.ops?.[0] || newGoal);
+  } catch (err) {
+    console.error("Goal creation error:", err);
+    res.status(500).json({ message: "Server error." });
+  }
+});
+
+app.get("/api/goals", async (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader)
+    return res.status(401).json({ message: "No token provided." });
+
+  const token = authHeader.split(" ")[1];
+  let decoded;
+  try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid token." });
+  }
+
+  try {
+    const userGoals = await goals.find({ userId: decoded.userId }).toArray();
+    res.status(200).json(userGoals);
+  } catch (err) {
+    res.status(500).json({ message: "Server error." });
+  }
+});
+
+app.put("/api/goals/:id", async (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader)
+    return res.status(401).json({ message: "No token provided." });
+
+  const token = authHeader.split(" ")[1];
+  let decoded;
+  try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid token." });
+  }
+
+  const goalId = req.params.id;
+  const { title, description, startDate, endDate, progress } = req.body;
+
+  if (!title || !startDate || !endDate) {
+    return res
+      .status(400)
+      .json({ message: "Title, start date, and end date are required." });
+  }
+
+  try {
+    const result = await goals.updateOne(
+      { _id: new ObjectId(goalId), userId: decoded.userId },
+      {
+        $set: {
+          title: title.trim(),
+          description: description?.trim() || "",
+          startDate: new Date(startDate),
+          endDate: new Date(endDate),
+          progress: progress ?? 0,
+          updatedAt: new Date(),
+        },
+      }
+    );
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ message: "Goal not found or not yours." });
+    }
+
+    res.status(200).json({ message: "Goal updated successfully." });
+  } catch (err) {
+    console.error("Goal update error:", err);
+    res.status(500).json({ message: "Server error." });
+  }
+});
+
+app.delete("/api/goals/:id", async (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader)
+    return res.status(401).json({ message: "No token provided." });
+
+  const token = authHeader.split(" ")[1];
+  let decoded;
+  try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid token." });
+  }
+
+  const goalId = req.params.id;
+
+  try {
+    const result = await goals.deleteOne({
+      _id: new ObjectId(goalId),
+      userId: decoded.userId,
+    });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ message: "Goal not found or not yours." });
+    }
+
+    res.status(200).json({ message: "Goal deleted successfully." });
+  } catch (err) {
+    console.error("Goal deletion error:", err);
+    res.status(500).json({ message: "Server error." });
+  }
+});
+
+app.patch("/api/goals/:id/complete", async (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader)
+    return res.status(401).json({ message: "No token provided." });
+
+  const token = authHeader.split(" ")[1];
+  let decoded;
+  try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid token." });
+  }
+
+  const goalId = req.params.id;
+
+  try {
+    const result = await goals.updateOne(
+      { _id: new ObjectId(goalId), userId: decoded.userId },
+      { $set: { completed: true, updatedAt: new Date() } }
+    );
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ message: "Goal not found or not yours." });
+    }
+
+    res.status(200).json({ message: "Goal marked as completed." });
+  } catch (err) {
+    console.error("Goal completion error:", err);
+    res.status(500).json({ message: "Server error." });
+  }
+});
 
 // Defines the port for the server to listen on.
 const PORT = process.env.PORT || 5000;
 // Starts the Express server.
 // '0.0.0.0' makes the server listen on all available network interfaces,
 // which is useful in containerized environments (like Docker) or if you want to access it from other machines on the same network.
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on port ${PORT}`); 
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
 });
