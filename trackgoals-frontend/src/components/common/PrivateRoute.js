@@ -16,7 +16,7 @@ function PrivateRoute({ children }) {
 
   if (!token) {
     // If the token does not exist and then the user is not logged, redirect them to the login page
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
   }
 
   // If User is logged in, the access is allowed and it renders its children (the protected content).

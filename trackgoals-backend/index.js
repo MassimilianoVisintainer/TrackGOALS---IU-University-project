@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
+
 const app = express(); // Creates an Express application instance.
 app.use(cors()); // Enables CORS for all routes, allowing requests from any origin.
 app.use(express.json()); // Middleware to parse incoming JSON payloads in request bodies. This makes `req.body` available.
@@ -30,6 +31,7 @@ async function connectDB() {
 }
 
 connectDB(); // Calls the function to connect to the database when the server starts.
+
 
 /**
  * POST /api/signup
@@ -416,6 +418,107 @@ app.patch("/api/goals/:id/complete", async (req, res) => {
     res.status(500).json({ message: "Server error." });
   }
 });
+
+// Define the /api/dashboard endpoint to return user-specific dashboard stats
+app.get("/api/dashboard", async (req, res) => {
+  // Check for the Authorization header (Bearer token)
+  const authHeader = req.headers.authorization;
+  if (!authHeader)
+    return res.status(401).json({ message: "No token provided." });
+
+  // Extract the JWT token from the "Bearer <token>" format
+  const token = authHeader.split(" ")[1];
+  let decoded;
+
+  // Verify the token using JWT_SECRET; return 401 if invalid
+  try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid token." });
+  }
+
+  try {
+    const userId = decoded.userId; // Extract the user's ID from the decoded token
+
+    // Parse the optional startDate and endDate query parameters
+    const startDate = req.query.startDate
+      ? new Date(req.query.startDate)
+      : new Date(Date.now() - 6 * 24 * 60 * 60 * 1000); // Default to 7 days ago
+    const endDate = req.query.endDate ? new Date(req.query.endDate) : new Date(); // Default to today
+
+    // Generate all dates in the specified range (formatted as YYYY-MM-DD)
+    const dateRange = [];
+    const cursor = new Date(startDate);
+    while (cursor <= endDate) {
+      dateRange.push(cursor.toISOString().split("T")[0]);
+      cursor.setDate(cursor.getDate() + 1); // Move to next day
+    }
+
+    // Fetch the user's habits and goals concurrently from MongoDB
+    const [userHabits, userGoals] = await Promise.all([
+      habits.find({ userId }).toArray(),
+      goals.find({ userId }).toArray(),
+    ]);
+
+    // Count total habits and goals
+    const totalHabits = userHabits.length;
+    const totalGoals = userGoals.length;
+
+    // Compute progress for each goal (based on elapsed time in range)
+    const goalsProgress = userGoals.map((goal) => {
+      const start = new Date(goal.startDate);
+      const end = new Date(goal.endDate);
+      const now = new Date();
+
+      const totalDuration = end - start;
+      const elapsed = now - start;
+
+      // Clamp progress between 0% and 100%
+      const progress = Math.max(
+        0,
+        Math.min(100, Math.round((elapsed / totalDuration) * 100))
+      );
+
+      return {
+        goalName: goal.title,
+        progress,
+        completed: goal.completed || false,
+      };
+    });
+
+    // Build chart data for habit completions over date range
+    const habitCompletionChartData = dateRange.map((date) => {
+      const completed = userHabits.reduce((count, habit) => {
+        const completions = habit.completedDates || [];
+        const dateStrings = completions.map((d) =>
+          new Date(d).toISOString().split("T")[0]
+        );
+        return count + (dateStrings.includes(date) ? 1 : 0);
+      }, 0);
+
+      return { date, completed }; // Format: { date: 'YYYY-MM-DD', completed: number }
+    });
+
+    // Sum total completions over selected period
+    const habitsCompleted = habitCompletionChartData.reduce(
+      (sum, day) => sum + day.completed,
+      0
+    );
+
+    // Send the dashboard response to the client
+    res.status(200).json({
+      totalHabits,
+      totalGoals,
+      habitsCompletedInRange: habitsCompleted,
+      goalsProgress,
+      habitCompletionChartData,
+    });
+  } catch (err) {
+    console.error("Dashboard error:", err); // Log server-side errors
+    res.status(500).json({ message: "Server error." }); // Send generic error to client
+  }
+});
+
 
 // Defines the port for the server to listen on.
 const PORT = process.env.PORT || 5000;

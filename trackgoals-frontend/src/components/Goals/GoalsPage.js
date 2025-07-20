@@ -120,6 +120,7 @@ function GoalsPage() {
 
   // Classify goals into categories
   const today = new Date();
+  today.setHours(0, 0, 0, 0);
   const activeGoals = goals.filter(
     (g) => !g.completed && new Date(g.endDate) >= today
   );
