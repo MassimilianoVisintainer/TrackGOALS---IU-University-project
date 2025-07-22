@@ -1,21 +1,230 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1751810147275" clover="3.2.0">
-  <project timestamp="1751810147275" name="All files">
-    <metrics statements="56" coveredstatements="44" conditionals="23" coveredconditionals="20" methods="15" coveredmethods="10" elements="94" coveredelements="74" complexity="0" loc="56" ncloc="56" packages="3" files="6" classes="6"/>
+<coverage generated="1753188059763" clover="3.2.0">
+  <project timestamp="1753188059763" name="All files">
+    <metrics statements="241" coveredstatements="66" conditionals="114" coveredconditionals="27" methods="62" coveredmethods="14" elements="417" coveredelements="107" complexity="0" loc="241" ncloc="241" packages="7" files="11" classes="11"/>
     <package name="src">
       <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="App.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\App.js">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="14" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
       </file>
     </package>
-    <package name="src.components">
-      <metrics statements="46" coveredstatements="44" conditionals="21" coveredconditionals="20" methods="11" coveredmethods="10"/>
-      <file name="HabitPage.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\HabitPage.js">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="6" count="0" type="stmt"/>
+    <package name="src.components.Dashboard">
+      <metrics statements="24" coveredstatements="22" conditionals="8" coveredconditionals="7" methods="6" coveredmethods="4"/>
+      <file name="Dashboard.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\Dashboard\Dashboard.js">
+        <metrics statements="24" coveredstatements="22" conditionals="8" coveredconditionals="7" methods="6" coveredmethods="4"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="51" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="52" count="2" type="stmt"/>
+        <line num="57" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="58" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="135" count="2" type="stmt"/>
       </file>
-      <file name="Login.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\Login.js">
+    </package>
+    <package name="src.components.Goals">
+      <metrics statements="64" coveredstatements="0" conditionals="36" coveredconditionals="0" methods="20" coveredmethods="0"/>
+      <file name="GoalsPage.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\Goals\GoalsPage.js">
+        <metrics statements="64" coveredstatements="0" conditionals="36" coveredconditionals="0" methods="20" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="48" count="0" type="cond" truecount="0" falsecount="5"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="70" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="87" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="91" count="0" type="stmt"/>
+        <line num="93" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="98" count="0" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="107" count="0" type="stmt"/>
+        <line num="115" count="0" type="stmt"/>
+        <line num="116" count="0" type="stmt"/>
+        <line num="117" count="0" type="stmt"/>
+        <line num="118" count="0" type="stmt"/>
+        <line num="122" count="0" type="stmt"/>
+        <line num="123" count="0" type="stmt"/>
+        <line num="124" count="0" type="stmt"/>
+        <line num="125" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="127" count="0" type="stmt"/>
+        <line num="128" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="133" count="0" type="stmt"/>
+        <line num="145" count="0" type="stmt"/>
+        <line num="151" count="0" type="stmt"/>
+        <line num="157" count="0" type="stmt"/>
+        <line num="163" count="0" type="stmt"/>
+        <line num="207" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="209" count="0" type="stmt"/>
+        <line num="212" count="0" type="stmt"/>
+        <line num="232" count="0" type="stmt"/>
+        <line num="238" count="0" type="stmt"/>
+        <line num="244" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Habits">
+      <metrics statements="98" coveredstatements="0" conditionals="47" coveredconditionals="0" methods="22" coveredmethods="0"/>
+      <file name="HabitForm.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\Habits\HabitForm.js">
+        <metrics statements="36" coveredstatements="0" conditionals="13" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="66" count="0" type="cond" truecount="0" falsecount="5"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="98" count="0" type="stmt"/>
+        <line num="106" count="0" type="stmt"/>
+      </file>
+      <file name="HabitItem.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\Habits\HabitItem.js">
+        <metrics statements="23" coveredstatements="0" conditionals="17" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+      </file>
+      <file name="HabitList.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\Habits\HabitList.js">
+        <metrics statements="36" coveredstatements="0" conditionals="17" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="51" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="79" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="90" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="91" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="98" count="0" type="stmt"/>
+        <line num="108" count="0" type="stmt"/>
+        <line num="123" count="0" type="stmt"/>
+      </file>
+      <file name="HabitPage.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\Habits\HabitPage.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Login">
+      <metrics statements="28" coveredstatements="27" conditionals="12" coveredconditionals="11" methods="5" coveredmethods="5"/>
+      <file name="Login.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\Login\Login.js">
         <metrics statements="28" coveredstatements="27" conditionals="12" coveredconditionals="11" methods="5" coveredmethods="5"/>
         <line num="11" count="16" type="stmt"/>
         <line num="12" count="16" type="stmt"/>
@@ -46,7 +255,10 @@
         <line num="82" count="2" type="stmt"/>
         <line num="92" count="3" type="stmt"/>
       </file>
-      <file name="SignUp.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\SignUp.js">
+    </package>
+    <package name="src.components.SignUp">
+      <metrics statements="17" coveredstatements="17" conditionals="9" coveredconditionals="9" methods="5" coveredmethods="5"/>
+      <file name="SignUp.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\SignUp\SignUp.js">
         <metrics statements="17" coveredstatements="17" conditionals="9" coveredconditionals="9" methods="5" coveredmethods="5"/>
         <line num="5" count="16" type="stmt"/>
         <line num="6" count="16" type="stmt"/>
@@ -72,10 +284,10 @@
       <file name="Header.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\common\Header.js">
         <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
       </file>
       <file name="PrivateRoute.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\common\PrivateRoute.js">
         <metrics statements="4" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>

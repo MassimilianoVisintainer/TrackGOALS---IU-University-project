@@ -80,15 +80,38 @@
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -97,31 +120,68 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useNavigate } from "react-router-dom";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useNavigate, Link } from "react-router-dom";
 &nbsp;
 function <span class="fstat-no" title="function not covered" >Header(</span>) {
-    const navigate = <span class="cstat-no" title="statement not covered" >useNavigate()</span>
-    const handleLogout = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    localStorage.removeItem("token"); </span>  // Clear JWT
-<span class="cstat-no" title="statement not covered" >    navigate("/login"); </span>                // Redirect to Login
-    }
-<span class="cstat-no" title="statement not covered" >    return (</span>
-        &lt;div&gt;
-            &lt;button onClick={handleLogout} className="btn btn-danger"&gt;
-                Log out
-            &lt;/button&gt;
-        &lt;/div&gt;
-    );
+  const navigate = <span class="cstat-no" title="statement not covered" >useNavigate();</span>
+&nbsp;
+  const handleLogout = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    localStorage.removeItem("token");</span>
+<span class="cstat-no" title="statement not covered" >    navigate("/");</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return (</span>
+    &lt;nav className="navbar navbar-expand-md navbar-light bg-light sticky-top shadow-sm px-4"&gt;
+      &lt;Link className="navbar-brand fw-bold" to="/habits"&gt;
+        TrackGOALS
+      &lt;/Link&gt;
+&nbsp;
+      &lt;div className="collapse navbar-collapse show"&gt;
+        &lt;ul className="navbar-nav me-auto"&gt;
+          &lt;li className="nav-item"&gt;
+            &lt;Link className="nav-link" to="/habits"&gt;Habits&lt;/Link&gt;
+          &lt;/li&gt;
+          &lt;li className="nav-item"&gt;
+            &lt;Link className="nav-link" to="/goals"&gt;Goals&lt;/Link&gt;
+          &lt;/li&gt;
+          &lt;li className="nav-item"&gt;
+            &lt;Link className="nav-link" to="/dashboard"&gt;Dashboard&lt;/Link&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button className="btn btn-outline-danger" onClick={handleLogout}&gt;
+          Log out
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/nav&gt;
+  );
 }
 &nbsp;
-export default Header</pre></td></tr></table></pre>
+export default Header;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-07-06T13:55:47.252Z
+                at 2025-07-22T12:40:59.543Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
