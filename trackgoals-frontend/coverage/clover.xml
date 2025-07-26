@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1753188059763" clover="3.2.0">
-  <project timestamp="1753188059763" name="All files">
-    <metrics statements="241" coveredstatements="66" conditionals="114" coveredconditionals="27" methods="62" coveredmethods="14" elements="417" coveredelements="107" complexity="0" loc="241" ncloc="241" packages="7" files="11" classes="11"/>
+<coverage generated="1753515241613" clover="3.2.0">
+  <project timestamp="1753515241613" name="All files">
+    <metrics statements="252" coveredstatements="125" conditionals="118" coveredconditionals="57" methods="64" coveredmethods="24" elements="434" coveredelements="206" complexity="0" loc="252" ncloc="252" packages="7" files="13" classes="13"/>
     <package name="src">
-      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="12" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="App.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\App.js">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="18" count="0" type="stmt"/>
+      </file>
+      <file name="index.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\index.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+      </file>
+      <file name="reportWebVitals.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\reportWebVitals.js">
+        <metrics statements="8" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Dashboard">
@@ -110,71 +127,71 @@
       </file>
     </package>
     <package name="src.components.Habits">
-      <metrics statements="98" coveredstatements="0" conditionals="47" coveredconditionals="0" methods="22" coveredmethods="0"/>
+      <metrics statements="98" coveredstatements="59" conditionals="47" coveredconditionals="30" methods="22" coveredmethods="10"/>
       <file name="HabitForm.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\Habits\HabitForm.js">
-        <metrics statements="36" coveredstatements="0" conditionals="13" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
-        <line num="66" count="0" type="cond" truecount="0" falsecount="5"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
-        <line num="72" count="0" type="stmt"/>
-        <line num="76" count="0" type="stmt"/>
-        <line num="87" count="0" type="stmt"/>
-        <line num="98" count="0" type="stmt"/>
-        <line num="106" count="0" type="stmt"/>
+        <metrics statements="36" coveredstatements="36" conditionals="13" coveredconditionals="13" methods="5" coveredmethods="5"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="24" type="stmt"/>
+        <line num="13" count="24" type="stmt"/>
+        <line num="14" count="24" type="stmt"/>
+        <line num="15" count="24" type="stmt"/>
+        <line num="16" count="24" type="stmt"/>
+        <line num="24" count="24" type="stmt"/>
+        <line num="25" count="6" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="30" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="37" count="5" type="stmt"/>
+        <line num="40" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="47" count="4" type="stmt"/>
+        <line num="49" count="4" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="60" count="2" type="stmt"/>
+        <line num="61" count="2" type="stmt"/>
+        <line num="62" count="2" type="stmt"/>
+        <line num="64" count="2" type="stmt"/>
+        <line num="66" count="2" type="cond" truecount="5" falsecount="0"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="72" count="4" type="stmt"/>
+        <line num="76" count="24" type="stmt"/>
+        <line num="87" count="6" type="stmt"/>
+        <line num="98" count="1" type="stmt"/>
+        <line num="106" count="1" type="stmt"/>
       </file>
       <file name="HabitItem.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\Habits\HabitItem.js">
-        <metrics statements="23" coveredstatements="0" conditionals="17" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="51" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
+        <metrics statements="23" coveredstatements="23" conditionals="17" coveredconditionals="17" methods="5" coveredmethods="5"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="11" type="stmt"/>
+        <line num="16" count="11" type="stmt"/>
+        <line num="17" count="44" type="cond" truecount="4" falsecount="0"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="33" count="11" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="50" count="11" type="stmt"/>
+        <line num="51" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="54" count="3" type="stmt"/>
+        <line num="55" count="3" type="stmt"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="65" count="11" type="stmt"/>
       </file>
       <file name="HabitList.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\Habits\HabitList.js">
         <metrics statements="36" coveredstatements="0" conditionals="17" coveredconditionals="0" methods="9" coveredmethods="0"/>
