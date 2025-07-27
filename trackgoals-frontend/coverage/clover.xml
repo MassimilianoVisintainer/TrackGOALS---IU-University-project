@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1753522132805" clover="3.2.0">
-  <project timestamp="1753522132805" name="All files">
-    <metrics statements="252" coveredstatements="3" conditionals="118" coveredconditionals="0" methods="64" coveredmethods="3" elements="434" coveredelements="6" complexity="0" loc="252" ncloc="252" packages="7" files="13" classes="13"/>
+<coverage generated="1753609579244" clover="3.2.0">
+  <project timestamp="1753609579244" name="All files">
+    <metrics statements="252" coveredstatements="50" conditionals="118" coveredconditionals="24" methods="64" coveredmethods="16" elements="434" coveredelements="90" complexity="0" loc="252" ncloc="252" packages="7" files="13" classes="13"/>
     <package name="src">
       <metrics statements="12" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="App.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\App.js">
@@ -57,29 +57,29 @@
       </file>
     </package>
     <package name="src.components.Goals">
-      <metrics statements="64" coveredstatements="0" conditionals="36" coveredconditionals="0" methods="20" coveredmethods="0"/>
+      <metrics statements="64" coveredstatements="50" conditionals="36" coveredconditionals="24" methods="20" coveredmethods="16"/>
       <file name="GoalsPage.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\Goals\GoalsPage.js">
-        <metrics statements="64" coveredstatements="0" conditionals="36" coveredconditionals="0" methods="20" coveredmethods="0"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="48" count="0" type="cond" truecount="0" falsecount="5"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
+        <metrics statements="64" coveredstatements="50" conditionals="36" coveredconditionals="24" methods="20" coveredmethods="16"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="18" count="12" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="26" count="12" type="stmt"/>
+        <line num="27" count="5" type="stmt"/>
+        <line num="31" count="12" type="stmt"/>
+        <line num="32" count="7" type="stmt"/>
+        <line num="33" count="7" type="stmt"/>
+        <line num="34" count="7" type="stmt"/>
+        <line num="36" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="12" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="48" count="1" type="cond" truecount="2" falsecount="3"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
         <line num="54" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="56" count="0" type="stmt"/>
@@ -88,46 +88,46 @@
         <line num="67" count="0" type="stmt"/>
         <line num="68" count="0" type="stmt"/>
         <line num="70" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="75" count="0" type="stmt"/>
-        <line num="76" count="0" type="stmt"/>
-        <line num="82" count="0" type="stmt"/>
-        <line num="86" count="0" type="stmt"/>
-        <line num="87" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="89" count="0" type="stmt"/>
-        <line num="90" count="0" type="stmt"/>
-        <line num="91" count="0" type="stmt"/>
+        <line num="75" count="12" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="86" count="12" type="stmt"/>
+        <line num="87" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
         <line num="93" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="98" count="0" type="stmt"/>
-        <line num="99" count="0" type="stmt"/>
-        <line num="100" count="0" type="stmt"/>
-        <line num="105" count="0" type="stmt"/>
+        <line num="98" count="12" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="105" count="1" type="stmt"/>
         <line num="107" count="0" type="stmt"/>
-        <line num="115" count="0" type="stmt"/>
-        <line num="116" count="0" type="stmt"/>
-        <line num="117" count="0" type="stmt"/>
-        <line num="118" count="0" type="stmt"/>
-        <line num="122" count="0" type="stmt"/>
-        <line num="123" count="0" type="stmt"/>
-        <line num="124" count="0" type="stmt"/>
-        <line num="125" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="127" count="0" type="stmt"/>
-        <line num="128" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="130" count="0" type="stmt"/>
-        <line num="133" count="0" type="stmt"/>
+        <line num="115" count="12" type="stmt"/>
+        <line num="116" count="1" type="stmt"/>
+        <line num="117" count="1" type="stmt"/>
+        <line num="118" count="1" type="stmt"/>
+        <line num="122" count="12" type="stmt"/>
+        <line num="123" count="12" type="stmt"/>
+        <line num="124" count="12" type="stmt"/>
+        <line num="125" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="127" count="12" type="stmt"/>
+        <line num="128" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="130" count="12" type="stmt"/>
+        <line num="133" count="12" type="stmt"/>
         <line num="145" count="0" type="stmt"/>
         <line num="151" count="0" type="stmt"/>
         <line num="157" count="0" type="stmt"/>
         <line num="163" count="0" type="stmt"/>
-        <line num="207" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="209" count="0" type="stmt"/>
-        <line num="212" count="0" type="stmt"/>
-        <line num="232" count="0" type="stmt"/>
-        <line num="238" count="0" type="stmt"/>
-        <line num="244" count="0" type="stmt"/>
+        <line num="207" count="36" type="cond" truecount="2" falsecount="0"/>
+        <line num="209" count="6" type="stmt"/>
+        <line num="212" count="6" type="stmt"/>
+        <line num="232" count="1" type="stmt"/>
+        <line num="238" count="1" type="stmt"/>
+        <line num="244" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Habits">
-      <metrics statements="98" coveredstatements="3" conditionals="47" coveredconditionals="0" methods="22" coveredmethods="3"/>
+      <metrics statements="98" coveredstatements="0" conditionals="47" coveredconditionals="0" methods="22" coveredmethods="0"/>
       <file name="HabitForm.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\Habits\HabitForm.js">
         <metrics statements="36" coveredstatements="0" conditionals="13" coveredconditionals="0" methods="5" coveredmethods="0"/>
         <line num="11" count="0" type="stmt"/>
@@ -233,10 +233,10 @@
         <line num="123" count="0" type="stmt"/>
       </file>
       <file name="HabitPage.js" path="C:\Users\massi\OneDrive\Desktop\Personal\University\IU\1st year\1st semester\PROJECT SOFTWARE ENGINEERING\Project code\trackgoals-frontend\src\components\Habits\HabitPage.js">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="6" count="5" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="10" count="5" type="stmt"/>
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Login">
