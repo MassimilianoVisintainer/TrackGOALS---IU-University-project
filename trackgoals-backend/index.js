@@ -16,7 +16,7 @@ const client = new MongoClient(process.env.MONGODB_URI); // Creates a new MongoC
 const db = client.db("TrackGoalsDB"); // Specifies the database to connect to.
 const users = db.collection("users"); // Specifies the 'users' collection within the database.
 const habits = db.collection("habits"); // Specifies the 'habits' collection within the database.
-const goals = db.collection("goals"); // Add this with the other collections
+const goals = db.collection("goals"); // Specifies the 'goals' collection within the database.
 
 /**
  * Asynchronously connects to the MongoDB database.
@@ -519,6 +519,10 @@ app.get("/api/dashboard", async (req, res) => {
     res.status(500).json({ message: "Server error." }); // Send generic error to client
   }
 });
+
+// Start daily reminder
+dailyReminderJob.start();
+
 
 // Defines the port for the server to listen on.
 const PORT = process.env.PORT || 5000;
