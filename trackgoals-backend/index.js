@@ -520,9 +520,6 @@ app.get("/api/dashboard", async (req, res) => {
   }
 });
 
-// Start daily reminder
-dailyReminderJob.start();
-
 
 // Defines the port for the server to listen on.
 const PORT = process.env.PORT || 5000;
