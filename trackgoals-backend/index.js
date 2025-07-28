@@ -4,7 +4,6 @@ const cors = require("cors");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
-const dailyReminderJob = require('./cron/dailyReminder');
 
 
 
@@ -520,10 +519,6 @@ app.get("/api/dashboard", async (req, res) => {
     res.status(500).json({ message: "Server error." }); // Send generic error to client
   }
 });
-
-// Start daily reminder
-dailyReminderJob.start();
-
 
 // Defines the port for the server to listen on.
 const PORT = process.env.PORT || 5000;
