@@ -18,7 +18,7 @@ function App() {
   return (
     // BrowserRouter makes the application's URL in sync with the UI.
     <BrowserRouter>
-      <Header /> {/* Full-width Header above all */}
+    
       {/* Routes is a container that holds all the individual Route components.
           It ensures that only one Route's element is rendered at a time based on the URL. */}
       <Routes>

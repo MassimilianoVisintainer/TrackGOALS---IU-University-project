@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HabitForm from "./HabitForm";
 import HabitList from "./HabitList";
+import Header from "../common/Header"; // Import the Header component
 
 function HabitPage() {
   const [refresh, setRefresh] = useState(false);
@@ -8,7 +9,7 @@ function HabitPage() {
   const fetchHabits = () => setRefresh((r) => !r);
 
   return (
-    <> 
+    <> <Header /> {/* Full-width Header above all */}
       <div className="container min-vh-100 py-4">
         {/* Habit Form Section */}
         <div className="card p-4 mb-5 shadow-sm" style={{ maxWidth: '600px', margin: 'auto' }}>
