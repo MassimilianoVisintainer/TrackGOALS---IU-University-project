@@ -9,7 +9,6 @@ function HabitPage() {
   const fetchHabits = () => setRefresh((r) => !r);
 
   return (
-    <> <Header /> {/* Full-width Header above all */}
       <div className="container min-vh-100 py-4">
         {/* Habit Form Section */}
         <div className="card p-4 mb-5 shadow-sm" style={{ maxWidth: '600px', margin: 'auto' }}>
@@ -20,7 +19,7 @@ function HabitPage() {
         {/* Habit List Section */}
         <HabitList key={refresh} onUpdate={fetchHabits} />
       </div>
-    </>
+    
   );
 }
 

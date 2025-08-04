@@ -59,7 +59,6 @@ const Dashboard = () => {
   if (error || !data) return <p>Error loading dashboard. Please try again later.</p>;
 
   return (
-    <><Header /> {/* Full-width Header above all */}
     <div className="container mt-4">
       {/* Header + Date Range Pickers */}
       <div className="d-flex flex-wrap justify-content-between align-items-center mb-3">
@@ -149,7 +148,7 @@ const Dashboard = () => {
         ))}
       </div>
     </div>
-    </>
+    
   );
 };
 

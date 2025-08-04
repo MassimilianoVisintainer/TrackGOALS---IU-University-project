@@ -132,7 +132,6 @@ function GoalsPage() {
 
   // Render the UI
   return (
-     <> <Header /> {/* Full-width Header above all */}
     <div className="container mt-4">
       <h2>{editId ? "Edit Goal" : "Create a Goal"}</h2>
 
@@ -195,7 +194,6 @@ function GoalsPage() {
       <h3 className="mt-4">Completed Goals</h3>
       <GoalList goals={completedGoals} showStatusOnly />
     </div>
-    </>
   );
 }
 
