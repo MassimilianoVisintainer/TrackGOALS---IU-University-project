@@ -44,7 +44,7 @@ This app helps users build consistent routines and stay motivated with a clean d
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 | Frontend        | Backend           | Database       | Auth        |  DevOps           |
 |------------------|-------------------|----------------|-------------|------------------|
