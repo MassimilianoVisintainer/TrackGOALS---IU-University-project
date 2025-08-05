@@ -52,9 +52,9 @@ This app helps users build consistent routines and stay motivated with a clean d
 
 ---
 
-## 🧱 System Overview
+## System Overview
 
-### 🧱 Architecture
+### Architecture
 
 - **Frontend**: React SPA (Axios, Router DOM)
 - **Backend**: REST API with Express
